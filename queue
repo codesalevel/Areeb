@@ -1,0 +1,48 @@
+size = int(input("Please input the size of the queue: "))
+queue = ['' for i in range (size)]
+tp = 0
+bp = -1
+qf = size -1 
+
+
+
+def enqueue():
+    global bp, qf
+    if bp == qf:
+        print ("queue is full cannot insert")
+    else:
+        object = input('please enter the item to be inserted:')
+        bp=bp+1
+        queue[bp] = object
+        print(queue)
+        
+        
+def dequeue():
+    global bp,tp
+    if bp == tp -1 :
+        print('queue is empty cannot dequeue')
+    else:  
+        queue[tp]=''
+        tp = tp +1
+        print (queue)
+            
+
+
+while True:  
+    
+    n= int(input(''' Please input the option number:
+              1. Insert an item
+              2. Remove an item
+              3. Display the queue
+              4. exit: '''))     
+
+    if n ==1:
+        enqueue()
+    elif n ==2:
+        dequeue()
+    elif n == 3:
+         print(queue)
+    elif n == 4:
+         break
+    else :
+         print ( 'chose an option between 1 to 4')
