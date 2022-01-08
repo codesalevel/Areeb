@@ -1,0 +1,32 @@
+mylist = [22,12,21,1,3,0,2,-1,2]
+
+def bubblesort():
+    top = len(mylist)
+    swap = True
+    while swap and top > 0 :
+        swap = False
+        for index in range (top-1):
+            if mylist[index]> mylist[index+1]:
+                temp = mylist[index]
+                mylist[index] = mylist[index+1]
+                mylist[index+1] = temp
+                swap = True
+    top = top -1
+    print(mylist)
+                
+
+def insertionsort():
+    lb = 0
+    ub = len(mylist)
+    for index in range  (lb + 1, ub ):
+        key = mylist[index]
+        place = index - 1
+        if mylist[place] > key :
+            while place >= lb and mylist[place] > key:
+                temp = mylist[place + 1]
+                mylist[place +1] = mylist[place]
+                mylist [place]=temp
+                place = place -1
+    print(mylist)
+    
+
