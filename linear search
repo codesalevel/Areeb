@@ -1,0 +1,16 @@
+mylist = [7,8,9,12,13,43,212,544,545]
+
+
+def linearsearch():
+    item = int(input("please input the number to be found: "))
+    found = False
+    count = 0
+    for count in range(0,len(mylist)):
+        if item == mylist[count]:
+            found = True
+    if found == True:
+        print ("number found at location : ", count + 1)
+    else:
+        print("number not found")
+        
+        
