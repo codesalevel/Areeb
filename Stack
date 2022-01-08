@@ -1,0 +1,42 @@
+def push():
+   global tp, sf, stack 
+   if tp == sf -1  :
+       print ("stack is full, cannot insert")
+   else:    
+       item = input("Please enter the item to be inserted: ")
+       tp = tp + 1
+       stack[tp] = item
+       print (stack)
+    
+def pop():
+    global tp,bp
+    if tp == bp -1 :
+        print ("stack is empty cannot pop")
+    else:
+        stack[tp]= ""
+        tp = tp-1
+        print (stack)
+   
+        
+def menu():
+    global chng
+    print (" 1. Insert an item 2. Remove an item 3. Exit")
+    opt = int(input (" Please enter the option number: "))
+    if opt == 1 :
+        push()
+    elif opt == 2 :
+        pop()
+    else :
+        chng = 2
+
+
+n = int(input("please enter the size of the array : "))      
+stack = ["empty" for index in range(0,n) ]
+bp = 0
+tp = -1
+sf = n
+print (stack)  
+
+chng = int(input("If you want to make changes press 1 else press 2: "))
+while chng == 1 : 
+    menu()          
