@@ -1,0 +1,22 @@
+mylist = [7,8,9,12,13,43,212,544,545]
+    
+def binarysearch():
+    item = int(input("please input the number to be found: "))
+    lowerbound = 0
+    upperbound = len(mylist) -1
+    f = False
+    while not f and lowerbound <= upperbound :
+        index = (upperbound + lowerbound // 2)
+        if mylist[index] == item:
+            f = True
+        elif item > mylist[index]:
+            lowerbound = index + 1
+        elif item < mylist[index]:
+            upperbound = index -1
+    if f == True:
+        print ("number found at location: ", index + 1)
+    else:
+        print ("number not found")
+        
+
+binarysearch()
