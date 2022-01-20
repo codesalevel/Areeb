@@ -18,15 +18,15 @@ def bubblesort():
 def insertionsort():
     lb = 0
     ub = len(mylist)
+
     for index in range  (lb + 1, ub ):
         key = mylist[index]
         place = index - 1
-        if mylist[place] > key :
-            while place >= lb and mylist[place] > key:
-                temp = mylist[place + 1]
-                mylist[place +1] = mylist[place]
-                mylist [place]=temp
-                place = place -1
+        while place > lb and mylist[place-1] > key:
+            mylist[place +1] = mylist[place]
+            place = place -1
+        mylist[place]=key
     print(mylist)
+
     
 
