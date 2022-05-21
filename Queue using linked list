@@ -14,18 +14,25 @@ for i in range(10):
 queue[-1].pointer = nullp
 
 def enqueue(name):
-   global freepointer, headpointer, tailpointer, currentpointer, length
-   if  freepointer == nullp :
+   global freepointer, currentpointer, length
+   if  length > len(queue):
        print('queue is full')
    else:
-        currentpointer = freepointer 
-        queue[currentpointer].data = name
-        freepointer = queue[currentpointer].pointer 
-        length = length + 1 
-   
+       if freepointer == -1 :
+           freepointer = 0
+       while queue[freepointer].data != None:
+           freepointer = queue[freepointer].pointer
+       currentpointer = freepointer
+       queue[currentpointer].data = name
+       freepointer = queue[freepointer].pointer
+       length = length + 1
+            
+            
+       
+
 
 def dequeue():
-    global freepointer, headpointer, tailpointer, currentpointer , length
+    global freepointer, headpointer, currentpointer , length
     if length == 0:
         print ('queue is empty ')
     else:
@@ -34,6 +41,8 @@ def dequeue():
         queue[headpointer].data = None
         length = length -1
         headpointer = headpointer + 1
+        
+        
         print ('item popped')
         
         
