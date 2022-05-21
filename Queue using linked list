@@ -15,7 +15,7 @@ queue[-1].pointer = nullp
 
 def enqueue(name):
    global freepointer, currentpointer, length
-   if  length > len(queue):
+   if  length = len(queue):
        print('queue is full')
    else:
        if freepointer == -1 :
