@@ -6,8 +6,7 @@ class node:
 nullp = -1
 length = 0
 currentpointer = nullp
-headpointer = nullp
-tailpointer = nullp
+headpointer = 0
 freepointer = 0
 queue = [node() for i in range(10)]
 for i in range(10):
@@ -16,21 +15,12 @@ queue[-1].pointer = nullp
 
 def enqueue(name):
    global freepointer, headpointer, tailpointer, currentpointer, length
-   if freepointer == nullp:
+   if  freepointer == nullp :
        print('queue is full')
    else:
         currentpointer = freepointer 
         queue[currentpointer].data = name
         freepointer = queue[currentpointer].pointer 
-        thisnodep = headpointer
-        previousp = nullp
-        while thisnodep != nullp and queue[thisnodep].data != None :
-            previousp = thisnodep
-            thisnodep = queue[thisnodep].pointer
-        if previousp == headpointer:
-            queue[previousp].pointer = headpointer
-            headpointer = currentpointer
-        tailpointer = currentpointer
         length = length + 1 
    
 
@@ -39,21 +29,11 @@ def dequeue():
     if length == 0:
         print ('queue is empty ')
     else:
-        queue[headpointer] = None
+        if length == 10:
+            freepointer = 0
+        queue[headpointer].data = None
         length = length -1
         headpointer = headpointer + 1
         print ('item popped')
         
-        
-enqueue('areeb')
-enqueue('areeb')
-enqueue('areeb')
-enqueue('areeb')
-enqueue('areeb')
-
-dequeue()
-dequeue()
-dequeue()
-dequeue()
-dequeue()
         
